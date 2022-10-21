@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "630258600727",
+    "project_id": "yo-class",
+    "storage_bucket": "yo-class.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630258600727:android:ae5e0a97f59f38f5518552",
+        "android_client_info": {
+          "package_name": "com.example.zoom_clone_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630258600727-dp9un0c9u2b8ki02lc3fa5oc3104i2n8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArYuxvDi5ALjlia9EeXZYR465sfV87uS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630258600727-dp9un0c9u2b8ki02lc3fa5oc3104i2n8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
