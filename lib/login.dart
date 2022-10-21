@@ -88,7 +88,7 @@ class _LoginViewState extends State<LoginView> {
                       enableSuggestions: true,
                       decoration:  InputDecoration(
                         hintText: 'Enter your email here',
-                        fillColor: Colors.grey[200],
+                        fillColor: Color.fromARGB(255, 167, 25, 25),
                         filled: true,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.deepPurple),
@@ -107,7 +107,7 @@ class _LoginViewState extends State<LoginView> {
                       enableSuggestions: false,
                       decoration:  InputDecoration(
                         hintText: 'Enter your password',
-                         fillColor: Colors.grey[200],
+                         fillColor: Color.fromARGB(255, 208, 48, 48),
                         filled: true,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.deepPurple),
