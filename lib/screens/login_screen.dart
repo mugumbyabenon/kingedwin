@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
 import 'package:zoom_clone_tutorial/widgets/custom_button.dart';
@@ -32,10 +33,11 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomButton(
             text: 'Google Sign In',
             onPressed: () async {
-              bool res = await _authMethods.signInWithGoogle(context);
-              if (res) {
-                Navigator.pushNamed(context, '/home');
-              }
+               Navigator.pushNamed(context, '/login');
+ //             bool res = await _authMethods.signInWithGoogle(context);
+ //             if (res) {
+//                Navigator.pushNamed(context, '/home');
+//              } 
             },
           ),
         ],

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
    <application
         tools:replace="android:label"  
-        android:label="zoom_clone_tutorial"
+        android:label="Yo_class"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

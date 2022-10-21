@@ -20,15 +20,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  List<Widget> pages = [
+ 
+  @override
+  Widget build(BuildContext context) {
+     List<Widget> pages = [
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
+    CustomButton(text: 'Log Out', onPressed: () async { AuthMethods().signOut();
+     Navigator.of(context).pushNamedAndRemoveUntil(
+                '/start', (route) => false);
+    }),
   ];
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: backgroundColor,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,7 @@ class AuthMethods {
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
 
-      User? user = userCredential.user;
+      User? user = FirebaseAuth.instance.currentUser;
 
       if (user != null) {
         if (userCredential.additionalUserInfo!.isNewUser) {
@@ -42,6 +44,10 @@ class AuthMethods {
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
       res = false;
+    } catch (e){
+       showSnackBar(context, '$e');
+       log('$e');
+      res = false;
     }
     return res;
   }
@@ -50,7 +56,7 @@ class AuthMethods {
     try {
       _auth.signOut();
     } catch (e) {
-      print(e);
+      log('$e');
     }
   }
 }

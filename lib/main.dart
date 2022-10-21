@@ -1,10 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:zoom_clone_tutorial/register.dart';
 import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
 import 'package:zoom_clone_tutorial/screens/home_screen.dart';
 import 'package:zoom_clone_tutorial/screens/login_screen.dart';
 import 'package:zoom_clone_tutorial/screens/video_call_screen.dart';
 import 'package:zoom_clone_tutorial/utils/colors.dart';
+
+import 'login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,14 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Zoom Clone',
+      title: 'Yo Class',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
       routes: {
-        '/login': (context) => const LoginScreen(),
+       // '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
         '/video-call': (context) => const VideoCallScreen(),
+          '/login': (context) =>  LoginView(),
+           '/register': (context) =>  RegisterView(),
+       '/start': (context) =>  LoginScreen(),    
       },
       home: StreamBuilder(
         stream: AuthMethods().authChanges,
