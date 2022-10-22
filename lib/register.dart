@@ -73,13 +73,13 @@ class _RegisterViewState extends State<RegisterView> {
                     height: 70,
                   ),
                   Icon(
-                    Icons.car_rental_rounded,
+                    Icons.class_rounded,
                     color: Colors.greenAccent,
                     size: 40,
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    'Car_Free',
+                    'YoClass',
                     style: GoogleFonts.bebasNeue(
                       fontSize: 30,
                       color: Colors.greenAccent,
