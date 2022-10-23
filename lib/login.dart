@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:zoom_clone_tutorial/homepage.dart';
 
 import 'dart:developer' as devtools show log;
 
@@ -61,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(
-                  'https://media.istockphoto.com/photos/visiting-car-dealership-afro-couple-showing-car-key-picture-id1167502071?b=1&k=20&m=1167502071&s=170667a&w=0&h=7khaGIzW3VxEayIR5EQELMtzHjxogHXkizJTE8e7fNk='),
+                  'https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200'),
               fit: BoxFit.cover)),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -133,14 +134,14 @@ class _LoginViewState extends State<LoginView> {
                   final user = await FirebaseAuth.instance.currentUser;
                   if (user != null) {
                     if (user?.emailVerified ?? false == true) {
-                      Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/home', (route) => false);
+                        Navigator.pushAndRemoveUntil(context,
+                MaterialPageRoute(builder: (context) => HOMEUI()), (r) => false);
                     } else {
                       final shouldLogout = await dialoglogin(context);
                       if (shouldLogout == true) {
                         await user.sendEmailVerification();
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            '/login', (route) => false);
+                        Navigator.pushAndRemoveUntil(context,
+                MaterialPageRoute(builder: (context) => LoginView()), (r) => false);
                       }
                     }
                   } else {
